@@ -112,6 +112,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
     let MILLIGRAM_PER_DECILITER = "MILLIGRAM_PER_DECILITER"
     let UNKNOWN_UNIT = "UNKNOWN_UNIT"
     let NO_UNIT = "NO_UNIT"
+    let ML_PER_KG_PER_L = "ML_PER_KG_PER_L"
     
     struct PluginError: Error {
         let message: String
