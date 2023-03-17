@@ -112,7 +112,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
     let MILLIGRAM_PER_DECILITER = "MILLIGRAM_PER_DECILITER"
     let UNKNOWN_UNIT = "UNKNOWN_UNIT"
     let NO_UNIT = "NO_UNIT"
-    let ML_PER_KG_PER_L = "ML_PER_KG_PER_L"
+    let MILLILITERS_PER_KILOGRAM_PER_MINUTE = "MILLILITERS_PER_KILOGRAM_PER_MINUTE"
     
     struct PluginError: Error {
         let message: String
@@ -659,6 +659,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         unitDict[PERCENT] = HKUnit.percent()
         unitDict[BEATS_PER_MINUTE] = HKUnit.init(from: "count/min")
         unitDict[MILLIGRAM_PER_DECILITER] = HKUnit.init(from: "mg/dL")
+        unitDict[MILLILITERS_PER_KILOGRAM_PER_MINUTE] = HKUnit(from: "ml/kg*min")
         unitDict[UNKNOWN_UNIT] = HKUnit.init(from: "")
         unitDict[NO_UNIT] = HKUnit.init(from: "")
         
