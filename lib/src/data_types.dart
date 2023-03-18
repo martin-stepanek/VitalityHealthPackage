@@ -154,7 +154,7 @@ const Map<HealthDataType, HealthDataUnit> _dataTypeToUnit = {
   HealthDataType.ELECTRODERMAL_ACTIVITY: HealthDataUnit.SIEMEN,
   HealthDataType.FORCED_EXPIRATORY_VOLUME: HealthDataUnit.LITER,
   HealthDataType.HEART_RATE: HealthDataUnit.BEATS_PER_MINUTE,
-  HealthDataType.VO2MAX: HealthDataUnit.ML_PER_KG_PER_L,
+  HealthDataType.VO2MAX: HealthDataUnit.MILLILITERS_PER_KILOGRAM_PER_MINUTE,
   HealthDataType.HEIGHT: HealthDataUnit.METER,
   HealthDataType.RESTING_HEART_RATE: HealthDataUnit.BEATS_PER_MINUTE,
   HealthDataType.STEPS: HealthDataUnit.COUNT,
@@ -275,7 +275,7 @@ enum HealthDataUnit {
   MILLIGRAM_PER_DECILITER,
   UNKNOWN_UNIT,
   NO_UNIT,
-  ML_PER_KG_PER_L,
+  MILLILITERS_PER_KILOGRAM_PER_MINUTE,
 }
 
 /// List of [HealthWorkoutActivityType]s.
