@@ -98,6 +98,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
     private var SLEEP_REM = "SLEEP_REM"
     private var SLEEP_OUT_OF_BED = "SLEEP_OUT_OF_BED"
     private var WORKOUT = "WORKOUT"
+    private var VO2MAX = "VO2MAX"
 
     val workoutTypeMap = mapOf(
         "AEROBICS" to FitnessActivities.AEROBICS,
@@ -431,6 +432,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
             SLEEP_AWAKE -> DataType.TYPE_SLEEP_SEGMENT
             SLEEP_IN_BED -> DataType.TYPE_SLEEP_SEGMENT
             WORKOUT -> DataType.TYPE_ACTIVITY_SEGMENT
+            // VO2MAX -> DataType.TYPE_HEART_POINTS
             else -> throw IllegalArgumentException("Unsupported dataType: $type")
         }
     }
@@ -455,6 +457,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
             SLEEP_AWAKE -> Field.FIELD_SLEEP_SEGMENT_TYPE
             SLEEP_IN_BED -> Field.FIELD_SLEEP_SEGMENT_TYPE
             WORKOUT -> Field.FIELD_ACTIVITY
+            // VO2MAX -> Field.FIELD_HEART_POINTS
             else -> throw IllegalArgumentException("Unsupported dataType: $type")
         }
     }
@@ -1884,6 +1887,12 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
                 endZoneOffset = null,
             )
 
+            VO2MAX -> VO2MaxRecord(
+                time = Instant.ofEpochMilli(startTime),
+                vo2max = Percentage(value),
+                zoneOffset = null,
+            )
+
             // AGGREGATE_STEP_COUNT -> StepsRecord()
             BLOOD_PRESSURE_SYSTOLIC -> throw IllegalArgumentException("You must use the [writeBloodPressure] API ")
             BLOOD_PRESSURE_DIASTOLIC -> throw IllegalArgumentException("You must use the [writeBloodPressure] API ")
@@ -2037,6 +2046,7 @@ class HealthPlugin(private var channel: MethodChannel? = null) :
         SLEEP_OUT_OF_BED to SleepStageRecord::class,
         SLEEP_SESSION to SleepSessionRecord::class,
         WORKOUT to ExerciseSessionRecord::class,
+        VO2MAX to VO2MaxRecord::class,
         // MOVE_MINUTES to TODO: Find alternative?
         // TODO: Implement remaining types
         // "ActiveCaloriesBurned" to ActiveCaloriesBurnedRecord::class,
