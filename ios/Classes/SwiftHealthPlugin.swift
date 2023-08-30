@@ -52,6 +52,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
   let SLEEP_AWAKE = "SLEEP_AWAKE"
   let SLEEP_DEEP = "SLEEP_DEEP"
   let SLEEP_REM = "SLEEP_REM"
+  let SLEEP_CORE = "SLEEP_LIGHT"
 
   let EXERCISE_TIME = "EXERCISE_TIME"
   let WORKOUT = "WORKOUT"
@@ -532,6 +533,9 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         if dataTypeKey == self.SLEEP_REM {
           samplesCategory = samplesCategory.filter { $0.value == 4 }
         }
+        if dataTypeKey == self.SLEEP_CORE {
+          samplesCategory = samplesCategory.filter { $0.value == 5 }
+        }
         if dataTypeKey == self.HEADACHE_UNSPECIFIED {
           samplesCategory = samplesCategory.filter { $0.value == 0 }
         }
@@ -910,6 +914,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
       dataTypesDict[SLEEP_AWAKE] = HKSampleType.categoryType(forIdentifier: .sleepAnalysis)!
       dataTypesDict[SLEEP_DEEP] = HKSampleType.categoryType(forIdentifier: .sleepAnalysis)!
       dataTypesDict[SLEEP_REM] = HKSampleType.categoryType(forIdentifier: .sleepAnalysis)!
+      dataTypesDict[SLEEP_CORE] = HKSampleType.categoryType(forIdentifier: .sleepAnalysis)!
 
       dataTypesDict[EXERCISE_TIME] = HKSampleType.quantityType(forIdentifier: .appleExerciseTime)!
       dataTypesDict[WORKOUT] = HKSampleType.workoutType()

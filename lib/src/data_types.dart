@@ -105,6 +105,7 @@ const List<HealthDataType> _dataTypeKeysIOS = [
   HealthDataType.SLEEP_ASLEEP,
   HealthDataType.SLEEP_DEEP,
   HealthDataType.SLEEP_REM,
+  HealthDataType.SLEEP_LIGHT,
   HealthDataType.WATER,
   HealthDataType.EXERCISE_TIME,
   HealthDataType.WORKOUT,
