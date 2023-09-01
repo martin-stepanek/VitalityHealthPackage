@@ -527,13 +527,13 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         if dataTypeKey == self.SLEEP_AWAKE {
           samplesCategory = samplesCategory.filter { $0.value == 2 }
         }
-        if dataTypeKey == self.SLEEP_DEEP {
+        if dataTypeKey == self.SLEEP_CORE {
           samplesCategory = samplesCategory.filter { $0.value == 3 }
         }
-        if dataTypeKey == self.SLEEP_REM {
+        if dataTypeKey == self.SLEEP_DEEP {
           samplesCategory = samplesCategory.filter { $0.value == 4 }
         }
-        if dataTypeKey == self.SLEEP_CORE {
+        if dataTypeKey == self.SLEEP_REM {
           samplesCategory = samplesCategory.filter { $0.value == 5 }
         }
         if dataTypeKey == self.HEADACHE_UNSPECIFIED {
