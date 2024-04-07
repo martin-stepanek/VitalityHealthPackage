@@ -69,6 +69,8 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
     let HEADACHE_MODERATE = "HEADACHE_MODERATE"
     let HEADACHE_SEVERE = "HEADACHE_SEVERE"
     let ELECTROCARDIOGRAM = "ELECTROCARDIOGRAM"
+    let VO2MAX = "VO2MAX"
+    let TIME_IN_DAYLIGHT = "TIME_IN_DAYLIGHT"
     let NUTRITION = "NUTRITION"
 
     // Health Unit types
@@ -1235,6 +1237,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
             dataQuantityTypesDict[DISTANCE_CYCLING] = HKQuantityType.quantityType(forIdentifier: .distanceCycling)!
             dataQuantityTypesDict[FLIGHTS_CLIMBED] = HKQuantityType.quantityType(forIdentifier: .flightsClimbed)!
             dataQuantityTypesDict[WATER] = HKQuantityType.quantityType(forIdentifier: .dietaryWater)!
+            dataTypesDict[VO2MAX] = HKQuantityType.quantityType(forIdentifier: .vo2Max)!
 
             healthDataQuantityTypes = Array(dataQuantityTypesDict.values)
         }
@@ -1277,6 +1280,14 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
             workoutActivityTypeMap["SOCIAL_DANCE"] = HKWorkoutActivityType.socialDance
             workoutActivityTypeMap["PICKLEBALL"] = HKWorkoutActivityType.pickleball
             workoutActivityTypeMap["COOLDOWN"] = HKWorkoutActivityType.cooldown
+        }
+
+        // Concatenate heart events, headache and health data types (both may be empty)
+        allDataTypes = Set(heartRateEventTypes + healthDataTypes)
+        allDataTypes = allDataTypes.union(headacheType)
+
+        if #available(iOS 17.0, *) {
+            dataTypesDict[TIME_IN_DAYLIGHT] = HKSampleType.quantityType(forIdentifier: .timeInDaylight)!
         }
 
         // Concatenate heart events, headache and health data types (both may be empty)
