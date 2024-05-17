@@ -1206,6 +1206,8 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
             dataTypesDict[NUTRITION] = HKSampleType.correlationType(
                 forIdentifier: .food)!
 
+            dataTypesDict[STANDING] = HKQuantityType.quantityType(forIdentifier: .appleStandTime)!
+
             healthDataTypes = Array(dataTypesDict.values)
         }
 
@@ -1240,8 +1242,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
             dataQuantityTypesDict[FLIGHTS_CLIMBED] = HKQuantityType.quantityType(forIdentifier: .flightsClimbed)!
             dataQuantityTypesDict[WATER] = HKQuantityType.quantityType(forIdentifier: .dietaryWater)!
             dataTypesDict[STAND_HOURS] = HKQuantityType.categoryType(forIdentifier: .appleStandHour)!
-            dataQuantityTypesDict[STANDING] = HKQuantityType.quantityType(forIdentifier: .appleStandTime)!
-            dataQuantityTypesDict[VO2MAX] = HKQuantityType.quantityType(forIdentifier: .vo2Max)!
+            dataTypesDict[VO2MAX] = HKQuantityType.quantityType(forIdentifier: .vo2Max)!
 
             healthDataQuantityTypes = Array(dataQuantityTypesDict.values)
         }
