@@ -374,7 +374,9 @@ class NutritionHealthValue extends HealthValue {
   /// Create a [NutritionHealthValue] based on a health data point from native data format.
   factory NutritionHealthValue.fromHealthDataPoint(dynamic dataPoint) =>
       NutritionHealthValue(
-        mealType: dataPoint['mealType'] as String,
+        mealType: dataPoint['mealType'] != null
+            ? dataPoint['mealType'] as String
+            : null,
         protein: dataPoint['protein'] != null
             ? (dataPoint['protein'] as num).toDouble()
             : null,
