@@ -437,6 +437,8 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
         dataTypesDict[HealthConstants.EXERCISE_TIME] = HKSampleType.quantityType(forIdentifier: .appleExerciseTime)!
         dataTypesDict[HealthConstants.WORKOUT] = HKSampleType.workoutType()
         dataTypesDict[HealthConstants.NUTRITION] = HKSampleType.correlationType(forIdentifier: .food)!
+
+        dataTypesDict[VO2MAX] = HKSampleType.quantityType(forIdentifier: .vo2Max)!
         
         characteristicsTypesDict[HealthConstants.BIRTH_DATE] = HKObjectType.characteristicType(forIdentifier: .dateOfBirth)!
         characteristicsTypesDict[HealthConstants.GENDER] = HKObjectType.characteristicType(forIdentifier: .biologicalSex)!
