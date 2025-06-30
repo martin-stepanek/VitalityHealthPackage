@@ -159,9 +159,6 @@ enum HealthConstants {
     static let UV_INDEX = "UV_INDEX"
     
     static let VO2MAX = "VO2MAX"
-    static let STAND_HOURS = "STAND_HOURS"
-    static let STANDING = "STANDING"
-    static let TIME_IN_DAYLIGHT = "TIME_IN_DAYLIGHT"
 
     // Health Unit types
     static let GRAM = "GRAM"
