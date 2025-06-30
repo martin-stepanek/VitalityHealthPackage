@@ -50,6 +50,10 @@ const List<HealthDataType> dataTypesIOS = [
   HealthDataType.HEADACHE_SEVERE,
   HealthDataType.HEADACHE_UNSPECIFIED,
   HealthDataType.LEAN_BODY_MASS,
+  HealthDataType.VO2MAX,
+  HealthDataType.STAND_HOURS,
+  HealthDataType.STANDING,
+  HealthDataType.TIME_IN_DAYLIGHT,
 
   // note that a phone cannot write these ECG-based types - only read them
   // HealthDataType.ELECTROCARDIOGRAM,

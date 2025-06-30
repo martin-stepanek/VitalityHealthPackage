@@ -158,6 +158,11 @@ enum HealthConstants {
     static let UNDERWATER_DEPTH = "UNDERWATER_DEPTH"
     static let UV_INDEX = "UV_INDEX"
     
+    static let VO2MAX = "VO2MAX"
+    static let STAND_HOURS = "STAND_HOURS"
+    static let STANDING = "STANDING"
+    static let TIME_IN_DAYLIGHT = "TIME_IN_DAYLIGHT"
+
     // Health Unit types
     static let GRAM = "GRAM"
     static let KILOGRAM = "KILOGRAM"
@@ -208,6 +213,7 @@ enum HealthConstants {
     static let METER_PER_SECOND = "METER_PER_SECOND"
     static let UNKNOWN_UNIT = "UNKNOWN_UNIT"
     static let NO_UNIT = "NO_UNIT"
+    static let MILLILITERS_PER_KILOGRAM_PER_MINUTE = "MILLILITERS_PER_KILOGRAM_PER_MINUTE"
 }
 
 /// Error structure used throughout the plugin
